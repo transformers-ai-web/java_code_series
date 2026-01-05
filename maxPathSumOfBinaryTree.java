@@ -1,3 +1,6 @@
+ // try submitting this on leetcode, here's the link for the problem
+ // https://leetcode.com/problems/binary-tree-maximum-path-sum/
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -37,4 +40,5 @@ class Solution {
         // Return max gain if continuing the path upward
         return node.val + Math.max(leftGain, rightGain);
     }
+
 }

@@ -1,4 +1,4 @@
-//try submitting this on gfg, here's the link for the problem
+//try submitting this on GFG, here's the link for the problem
 //https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1
 
 /*

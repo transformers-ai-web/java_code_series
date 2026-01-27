@@ -1,5 +1,5 @@
 // try submitting this on leetcode, here's the link for the problem
-// https://leetcode.com/problems/balanced-binary-tree/
+// https://leetcode.com/problems/diameter-of-binary-tree/
 
 /**
  * Definition for a binary tree node.
@@ -14,19 +14,16 @@
  */
 class Solution {
 public:
-    bool isBalanced(TreeNode* root) {
-        // bool balanced = false;
-        int balanced = findBalance(root);
-        if(balanced == -1) return false;
-        return true;
+    int diameterOfBinaryTree(TreeNode* root) {
+        int maxi = 0;
+        int height = findMax(root, maxi);
+        return maxi;
     }
-    int findBalance(TreeNode* root){
+    int findMax(TreeNode* root, int& maxi){
         if(root==NULL) return 0;
-        int lh = findBalance(root->left);
-        if(lh==-1) return -1;
-        int rh = findBalance(root->right);
-        if(rh==-1) return -1;
-        if(abs(lh-rh) > 1) return -1;
+        int lh = findMax(root->left, maxi);
+        int rh = findMax(root->right, maxi);
+        maxi = max(maxi, lh+rh);
         return 1+max(lh,rh);
     }
 };
